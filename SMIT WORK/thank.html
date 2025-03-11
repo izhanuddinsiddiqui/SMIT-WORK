@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+            background-color: #faebd7;
+        }
+    form{
+            border: 1px solid black;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;  
+            width: 270px;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 7px; 
+            box-shadow: 9px 9px 10px rgba(0, 0, 0, 0.1);
+                    
+        }
+        input{
+            margin: 10px 0;
+            cursor: pointer;
+            height: 30px;
+            border-radius: 7px;
+            background-color:  #faebd7;
+        }
+        button{
+            background-color: #0077ff;
+
+            color: #fff;
+            height: 35px;
+            cursor:pointer;
+            border-radius: 7px;
+             }
+             button:hover{
+                background-color:#3844ad;
+             }
+             input:focus{
+                background-color: #d4b489;
+             }
+        
+    </style>
+</head>
+<body>
+        <form target="_blank" action="thankyou.html" method="get">
+            <h2>
+                Login Form
+            </h2>
+            <label for="email">Username</label>
+            <input type="text" placeholder="enter your username"required>
+
+            <label for="password">Password:</label>
+            <input type="password" placeholder="enter your password" required>
+            <button type="submit">
+                Login
+            </button>
+        </form>
+
+</body>
+</html>

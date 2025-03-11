@@ -1,0 +1,17 @@
+/* .car{
+    width: 400px;
+    height: 400px;
+    object-fit:cover;
+}
+.big-car{
+    width: 800px;
+    height: 800px;
+    object-fit:cover;
+}
+zoom-img{
+    zoom: 2;
+} */
+ .todo-input{
+    border: none;
+    background: transparent;
+ }
