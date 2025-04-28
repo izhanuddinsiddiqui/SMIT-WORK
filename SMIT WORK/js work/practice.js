@@ -1011,6 +1011,7 @@
 // var cars = {
 //         honda:{
 //                 civic:{
+
 //                         model_2010:{
 //                                 name:"civic 2010",
 //                                 company : "honda",
@@ -1104,5 +1105,127 @@
 
 // localStorage.clear()
 
-localStorage.setItem("student",JSON.stringify({name:"izhan"}))
-localStorage.getItem("student")
+// localStorage.setItem("student",JSON.stringify({name:"izhan"}))
+// localStorage.getItem("student")
+
+// window.location.pathname
+// window.location.href
+// window.location.hash
+// window.location.hostname
+// history.back()
+// history.forward()
+// document.referrer
+// window.open()
+// window.close()
+
+// FOR A JUMP TO GIVEN NO LIKE BACK FOUR PAGE AND FORWARD FOUR PAGE
+// history.go(-4)
+// history.go(4)
+
+// var wind = window.open("","win!")   //FOR BLANK PAGE
+// var wind = window.open("index.html","win!","width=420,height=420,left=500,top=100")
+// function closeWindow() {
+//     wind.close()
+// }
+
+
+
+
+// try {
+//     console.log("hello");
+//     // console.lo("hello");
+//     throw "please enter a correct value"
+    
+// } catch (error) {
+//     console.log(error);
+// }
+
+// alert("hello")
+
+// FOR QUIZ
+var question= [
+    {
+        question:"whats does html stands for?",
+        opt1: "hyper markup language",
+        opt2: "hyper text  markup language",
+        opt3: "hyper markup language",
+        correctOpt:"hyper text  markup language"
+    },
+    {
+        question: "founder of Pakistan",
+        opt1:"Quaid",
+        opt2:"Allama",
+        opt3:"Ali",
+        correctOpt:"Quaid"
+    }
+]
+var ques= document.getElementById("question")
+var opt1= document.getElementById("opt1")
+var opt2= document.getElementById("opt2")
+var opt3= document.getElementById("opt3")
+var index = 0
+var btn =  document.getElementById("btn")
+var score = 0;
+
+function nextQuestion(){
+     var opt = document.getElementsByName('answer')
+     for(var i = 0; i<opt.length;i++){
+        if(opt[i].checked){
+            var selected = opt[i].value
+            console.log(opt[i].value);
+    var userAns= question[index-1][`opt${selected}`]            
+             var correctAns = question[index-1].correctOpt
+             if(userAns===correctAns){
+                score++
+             }
+        }
+        opt[i].checked=false 
+    btn.disabled = true;
+ }
+
+    if(index > question.length-1){
+
+        console.log("Question End");
+        console.log((score/question.length)*100);
+        
+        
+    }else{
+        ques.innerHTML= question[index].question
+        opt1.innerText= question[index].opt1
+        opt2.innerText= question[index].opt2
+        opt3.innerText= question[index].opt3
+        index++
+
+    }
+    
+}
+nextQuestion()
+
+function enableBtn(){
+    btn.disabled = false;
+}
+var min=1
+var sec=10
+var timer = document.getElementById("timer")
+
+var interval = setInterval(function(){
+    timer.innerHTML = `${min}:${sec}`
+    sec--
+    if(sec<0){
+        if(min<1){
+            nextQuestion()
+            min = 1;
+            sec  = 10;
+
+        }else{
+            min--
+            sec = 10
+        }
+
+    }
+},1000)
+
+window.addEventListener("blur",function(){
+    console.log("user offline");
+})
+// QUIZ END
