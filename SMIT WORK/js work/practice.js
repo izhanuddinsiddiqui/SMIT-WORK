@@ -1029,7 +1029,7 @@
 // }
 
 
-                                                //CONSTRUCTOR FUNCTION 
+//CONSTRUCTOR FUNCTION 
 // function Student(firstName, lastName) {
 //         this.firstName = firstName;
 //         this.lastName = lastName;
@@ -1040,11 +1040,11 @@
 // var student = new Student("izhan", "uddin");
 // console.log(student.getFullName());
 
-                                                // PROTOTYPE FUNCTION
+// PROTOTYPE FUNCTION
 // function Student(firstName, lastName) {
 //         this.firstName = firstName;
 //         this.lastName = lastName;
-        
+
 // }
 // Student.prototype.getFullName = function () {
 //         return `${this.firstName} ${this.lastName}`
@@ -1057,7 +1057,7 @@
 // console.log(student.hasOwnProperty("getFullName"));
 // console.log(student.hasOwnProperty("firstName"));
 
-                                    // files get.image get by js
+// files get.image get by js
 // function submit(){
 // // var dropdown = document.getElementById("dropdown")
 // // console.log(dropdown.value);
@@ -1065,7 +1065,7 @@
 // for(var i=0; i< gender.length ;i++){
 //     if(gender[i].checked){
 //         console.log(gender[i].value);
-        
+
 //     }
 // }
 // console.log(gender);
@@ -1087,7 +1087,7 @@
 // image.src = URL.createObjectURL(file.files[0]) 
 
 
-                                    // for moving another page by js
+// for moving another page by js
 // location.href ="index.html";
 // window.open("index.html")
 
@@ -1135,7 +1135,7 @@
 //     console.log("hello");
 //     // console.lo("hello");
 //     throw "please enter a correct value"
-    
+
 // } catch (error) {
 //     console.log(error);
 // }
@@ -1143,89 +1143,447 @@
 // alert("hello")
 
 // FOR QUIZ
-var question= [
-    {
-        question:"whats does html stands for?",
-        opt1: "hyper markup language",
-        opt2: "hyper text  markup language",
-        opt3: "hyper markup language",
-        correctOpt:"hyper text  markup language"
-    },
-    {
-        question: "founder of Pakistan",
-        opt1:"Quaid",
-        opt2:"Allama",
-        opt3:"Ali",
-        correctOpt:"Quaid"
-    }
-]
-var ques= document.getElementById("question")
-var opt1= document.getElementById("opt1")
-var opt2= document.getElementById("opt2")
-var opt3= document.getElementById("opt3")
-var index = 0
-var btn =  document.getElementById("btn")
-var score = 0;
+// var question= [
+//     {
+//         question:"whats does html stands for?",
+//         opt1: "hyper markup language",
+//         opt2: "hyper text  markup language",
+//         opt3: "hyper markup language",
+//         correctOpt:"hyper text  markup language"
+//     },
+//     {
+//         question: "founder of Pakistan",
+//         opt1:"Quaid",
+//         opt2:"Allama",
+//         opt3:"Ali",
+//         correctOpt:"Quaid"
+//     }
+// ]
+// var ques= document.getElementById("question")
+// var opt1= document.getElementById("opt1")
+// var opt2= document.getElementById("opt2")
+// var opt3= document.getElementById("opt3")
+// var index = 0
+// var btn =  document.getElementById("btn")
+// var score = 0;
 
-function nextQuestion(){
-     var opt = document.getElementsByName('answer')
-     for(var i = 0; i<opt.length;i++){
-        if(opt[i].checked){
-            var selected = opt[i].value
-            console.log(opt[i].value);
-    var userAns= question[index-1][`opt${selected}`]            
-             var correctAns = question[index-1].correctOpt
-             if(userAns===correctAns){
-                score++
-             }
-        }
-        opt[i].checked=false 
-    btn.disabled = true;
- }
+// function nextQuestion(){
+//      var opt = document.getElementsByName('answer')
+//      for(var i = 0; i<opt.length;i++){
+//         if(opt[i].checked){
+//             var selected = opt[i].value
+//             console.log(opt[i].value);
+//     var userAns= question[index-1][`opt${selected}`]            
+//              var correctAns = question[index-1].correctOpt
+//              if(userAns===correctAns){
+//                 score++
+//              }
+//         }
+//         opt[i].checked=false 
+//     btn.disabled = true;
+//  }
 
-    if(index > question.length-1){
+//     if(index > question.length-1){
 
-        console.log("Question End");
-        console.log((score/question.length)*100);
-        
-        
-    }else{
-        ques.innerHTML= question[index].question
-        opt1.innerText= question[index].opt1
-        opt2.innerText= question[index].opt2
-        opt3.innerText= question[index].opt3
-        index++
+//         console.log("Question End");
+//         console.log((score/question.length)*100);
 
-    }
-    
-}
-nextQuestion()
 
-function enableBtn(){
-    btn.disabled = false;
-}
-var min=1
-var sec=10
-var timer = document.getElementById("timer")
+//     }else{
+//         ques.innerHTML= question[index].question
+//         opt1.innerText= question[index].opt1
+//         opt2.innerText= question[index].opt2
+//         opt3.innerText= question[index].opt3
+//         index++
 
-var interval = setInterval(function(){
-    timer.innerHTML = `${min}:${sec}`
-    sec--
-    if(sec<0){
-        if(min<1){
-            nextQuestion()
-            min = 1;
-            sec  = 10;
+//     }
 
-        }else{
-            min--
-            sec = 10
-        }
+// }
+// nextQuestion()
 
-    }
-},1000)
+// function enableBtn(){
+//     btn.disabled = false;
+// }
+// var min=1
+// var sec=10
+// var timer = document.getElementById("timer")
 
-window.addEventListener("blur",function(){
-    console.log("user offline");
-})
+// var interval = setInterval(function(){
+//     timer.innerHTML = `${min}:${sec}`
+//     sec--
+//     if(sec<0){
+//         if(min<1){
+//             nextQuestion()
+//             min = 1;
+//             sec  = 10;
+
+//         }else{
+//             min--
+//             sec = 10
+//         }
+
+//     }
+// },1000)
+
+// window.addEventListener("blur",function(){
+//     console.log("user offline");
+// })
 // QUIZ END
+
+// setTimeout(function(){
+
+//     var obj = {
+//         name : "izhan",
+//         email: "izzsidd02@gmail.com"
+//     }
+//     abc (obj)
+//     console.log("hello");
+
+// },2000)
+// console.log("world");
+
+// for( var i = 0; i<=5; i++){
+
+//     console.log(i);
+
+// }
+// function abc (obj){
+//     console.log(obj);
+
+// }
+
+
+// var obj;
+// setTimeout(function(){
+
+//      obj = {
+//         name : "izhan",
+//         email: "izzsidd02@gmail.com"
+//     }    
+// },2000)
+// setTimeout(function(){
+//     console.log(obj);
+
+// },3000)
+
+// function foo (callBack){
+//     setTimeout(function(){
+
+//      obj = {
+//         name : "izhan",
+//         email: "izzsidd02@gmail.com"
+//     }    
+//     callBack(obj)
+//     },2000)
+// }
+
+// function abc(data){
+//     console.log(data);
+
+// }
+// foo(abc)
+
+// function abc() {
+//     return new Promise(function(resolve,reject){
+//             setTimeout(function () {
+    
+//                 obj = {
+//                     name: "izhan",
+//                     email: "izzsidd02@gmail.com"
+//                 }
+//                 // resolve(obj)
+//                 reject("errors comes")
+//             }, 3000)
+//         })
+
+//     }
+// abc()
+// .then(function(data){
+//     console.log("data",data);
+    
+// })
+// .catch(function(err){
+//     console.log("error",err);
+    
+// })
+
+
+// fetch('https://jsonplaceholder.typicode.com/photos')
+// .then(function(data){
+//     return data.json()
+// })
+// .then(function(data){
+//     console.log(data);
+    
+// })
+// .catch(function(err){
+//     console.log(err);
+    
+// })
+
+
+// let abc = "izhan"
+// let abc = "izz"
+// console.log(abc);
+
+// FUNCTION SCOPE
+// function(){
+    // var abc = "izz"
+    // let abc = "izz"
+    // const abc = "izz"
+// }
+
+// if (true) {
+    // let abc = "izz"
+    // var abc = "izz"
+// }
+// console.log(abc);
+
+
+// const data = ["izhan"]
+// console.log(data);
+// data.push("uddin")
+
+// const does not reassign
+// data = ["smit"]
+// console.log(data);
+
+// var data = "izhan"
+// console.log(data);
+// const data = "izz"
+// console.log(data);
+
+// "back tick use for multi line varriable"
+// let firstName = `izhan
+// uddin`
+// let lasttName = "siddiqui"
+// let fullName = `${firstName} ${lasttName}`
+// console.log(fullName);
+
+
+// REST PARAMETER
+// function abc (a = "Not provided", ...restParameter){
+//     console.log(a, restParameter);
+// }
+// abc("izhan",72836,"fuuast","smit","izzsidd02@gmail.com")
+
+
+// function abc (...restParameter){
+//     console.log( restParameter);
+// }
+// abc("izhan",72836,"fuuast","smit","izzsidd02@gmail.com")
+
+
+// function abc (){
+//     console.log(arguments);
+// }
+// abc("izhan",72836,"fuuast","smit","izzsidd02@gmail.com")
+
+
+// let arr = [2,34,5,56,67,8]
+// let arr1 = [1,23,4,5,6,67,8,9]
+// let merge = []
+
+// for( var i = 0; i< arr.length; i++){
+//     merge.push(arr[i])
+// }
+
+// for( var i = 0; i< arr1.length; i++){
+//     merge.push(arr1[i])
+// }
+// console.log(merge);
+
+
+// SPREAD OPERATOR
+//  let arr = [2,34,5,56,67,8]
+//  let arr1 = [1,23,4,5,6,67,8,9]
+// let merge = [...arr,...arr1]
+// console.log(merge);
+
+// let obj = {
+//     firstName : 'izhan',
+//     Fname : "faisal"
+// }
+// let std = {
+//     email: "izzsidd02@gmail.com"
+// }
+
+// let merge = {...obj, ...std}
+// console.log(merge);
+
+
+// let obj = {name :"izhan" ,detail : {school :"smit"}}
+// let obj1 = {...obj,detail:{...obj.detail}};
+// obj1.detail.school = "sylani"
+// obj1.name = "uddin"
+// console.log(obj);
+// console.log(obj1);
+
+//  function popup(message) { 
+//        alert(message); 
+//      }
+
+// DESTRUCTING METHOD
+// let obj = {
+//     firstNAme : "izhan",
+//     lastName : "uddin",
+//      email: "izzsidd02@gmail.com",
+//      detail:{
+//         school :"smit"
+//      }
+// }
+// let {email,firstNAme, lastName,detail} = obj
+// let {school } = detail
+// console.log(firstNAme, lastName,email);
+// console.log(firstNAme);
+// console.log(school);
+
+// let arr = ["izhan", "uddin" , "smit"]
+// let [a,b,c] = arr;
+// console.log(a,b,c);
+
+// let arr = ["izhan", 3232, "uddin",true]
+// arr.forEach(function(v , i){
+// console.log(v ,i );
+// })
+// FOREACH() DOES NOT RETURN ANY VALUE
+// let arr = ["izhan", 3232, "uddin",true]
+// let loop = arr.forEach(function(v , i){
+//     console.log(v ,i );
+//     })
+//     console.log(loop);
+
+// RETURN ALSO A VALUE map()
+// let arr = ["izhan", 3232, "uddin",true]
+// let loop = arr.map(function(v , i){
+//         console.log(v ,i );
+//         return`${v} sylani` 
+//         })
+//         console.log(loop);    
+
+//  check conditions IN RETURN TRUE AND FALSE
+// let arr = ["izhan", 3232, "uddin",true]
+// let loop = arr.filter(function(v , i){
+//     console.log(v ,i );
+//     return v=== "izhan"|| v===3232
+//     })
+//     console.log(loop);
+
+// some() and every()  ALSO TAKE BOOLEAN IN RETURN TRUE AND FALSE   AND WORKING SAME 
+// let arr = ["izhan", 3232, "uddin",true]
+// let loop = arr.some(function(v , i){
+//     console.log(v ,i );
+//     })
+//     console.log(loop);
+
+// let arr = ["izhan", 3232, "uddin",true]
+// let loop = arr.every(function(v , i){
+//     console.log(v ,i );
+//     })
+//     console.log(loop);
+
+
+// SORT()
+// let arr = [{name : "izhan"}, {name : "uddin"}]
+// arr.sort(function(a,b){
+//     return -1
+//     // return 0
+// })
+// console.log(arr);
+
+// var arr = [1,2,3,4,5]
+// let result = arr.reduce(function (a,b) {
+//     console.log(a,b);
+//     return a > b ? a: b
+// })
+// console.log(result);
+
+//FUNCTION DECLERATION 
+// function abc(){
+//     console.log("test");
+// }
+// abc()
+
+// FUNCTION EXPRESSION
+// var foo = function(){
+//     console.log("hello");
+// }
+// foo()
+
+// ARROW FUNCTION
+// let foo = a =>{
+//     console.log(a);
+    
+// }
+// foo("saylani")
+
+// let foo = (a,b) =>{
+//     console.log(a , b);
+    
+// }
+// foo("saylani" , "izhan")
+
+
+// let foo = (a) =>{
+// return a + 10     
+// }
+// console.log(foo(a));
+
+// this method of arrow func only for one line
+// let foo = (a) =>
+//      a + 10     
+// console.log(foo(10));
+    
+// function foo(){
+//     console.log(arguments);
+    
+// }
+// foo("izhan")
+
+// let obj = {
+//     name : "izhan",
+//     getName : function(){
+// let func1 = ()=>{
+//     console.log(this);   
+// }
+// func1()
+//     }
+// }
+// obj.getName()
+// let abc = obj.getName
+// abc()
+
+
+// MERGE 2 CLASSES 
+// class School {
+// constructor(schoolName){
+//     this . schoolName = "schoolName"
+
+// }
+// }
+
+// class Student  extends School{
+//     constructor(schoolName,name,email){
+//         super(schoolName)
+//         this.name = name 
+//         this .email = email
+//     }
+//     getName(){
+//         return this.name
+//     }
+// }
+// let student = new Student("sylani","izhan uddin" ,"IZZSIDD@123.COM")
+// // console.log(student.getName());
+// console.log(student);
+
+class Car {
+    #name
+    constructor(name){
+this.#name = name 
+    }
+    getCarname(){
+        return this.#name
+    }
+}
+let car = new Car("Mehran")
+console.log(car.getCarname());
